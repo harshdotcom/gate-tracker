@@ -1,0 +1,852 @@
+﻿{
+    "startDate":  "2026-06-08",
+    "totalDays":  100,
+    "dailyPlan":  [
+                      {
+                          "day":  1,
+                          "date":  "2026-06-08",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Soil Mechanics"
+                      },
+                      {
+                          "day":  2,
+                          "date":  "2026-06-09",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Soil Mechanics"
+                      },
+                      {
+                          "day":  3,
+                          "date":  "2026-06-10",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Soil Mechanics"
+                      },
+                      {
+                          "day":  4,
+                          "date":  "2026-06-11",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Soil Mechanics"
+                      },
+                      {
+                          "day":  5,
+                          "date":  "2026-06-12",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Soil Mechanics"
+                      },
+                      {
+                          "day":  6,
+                          "date":  "2026-06-13",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "Soil Mechanics"
+                      },
+                      {
+                          "day":  7,
+                          "date":  "2026-06-14",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "Soil Mechanics"
+                      },
+                      {
+                          "day":  8,
+                          "date":  "2026-06-15",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Soil Mechanics"
+                      },
+                      {
+                          "day":  9,
+                          "date":  "2026-06-16",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Soil Mechanics"
+                      },
+                      {
+                          "day":  10,
+                          "date":  "2026-06-17",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Soil Mechanics"
+                      },
+                      {
+                          "day":  11,
+                          "date":  "2026-06-18",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Fluid Mechanics"
+                      },
+                      {
+                          "day":  12,
+                          "date":  "2026-06-19",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Fluid Mechanics"
+                      },
+                      {
+                          "day":  13,
+                          "date":  "2026-06-20",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "Fluid Mechanics"
+                      },
+                      {
+                          "day":  14,
+                          "date":  "2026-06-21",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "Fluid Mechanics"
+                      },
+                      {
+                          "day":  15,
+                          "date":  "2026-06-22",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Fluid Mechanics"
+                      },
+                      {
+                          "day":  16,
+                          "date":  "2026-06-23",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Fluid Mechanics"
+                      },
+                      {
+                          "day":  17,
+                          "date":  "2026-06-24",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Fluid Mechanics"
+                      },
+                      {
+                          "day":  18,
+                          "date":  "2026-06-25",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Fluid Mechanics"
+                      },
+                      {
+                          "day":  19,
+                          "date":  "2026-06-26",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Fluid Mechanics"
+                      },
+                      {
+                          "day":  20,
+                          "date":  "2026-06-27",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "Structural Analysis"
+                      },
+                      {
+                          "day":  21,
+                          "date":  "2026-06-28",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "Structural Analysis"
+                      },
+                      {
+                          "day":  22,
+                          "date":  "2026-06-29",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Structural Analysis"
+                      },
+                      {
+                          "day":  23,
+                          "date":  "2026-06-30",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Structural Analysis"
+                      },
+                      {
+                          "day":  24,
+                          "date":  "2026-07-01",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Structural Analysis"
+                      },
+                      {
+                          "day":  25,
+                          "date":  "2026-07-02",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Structural Analysis"
+                      },
+                      {
+                          "day":  26,
+                          "date":  "2026-07-03",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Structural Analysis"
+                      },
+                      {
+                          "day":  27,
+                          "date":  "2026-07-04",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "Structural Analysis"
+                      },
+                      {
+                          "day":  28,
+                          "date":  "2026-07-05",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "Structural Analysis"
+                      },
+                      {
+                          "day":  29,
+                          "date":  "2026-07-06",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Structural Analysis"
+                      },
+                      {
+                          "day":  30,
+                          "date":  "2026-07-07",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Structural Analysis"
+                      },
+                      {
+                          "day":  31,
+                          "date":  "2026-07-08",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Strength of Materials"
+                      },
+                      {
+                          "day":  32,
+                          "date":  "2026-07-09",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Strength of Materials"
+                      },
+                      {
+                          "day":  33,
+                          "date":  "2026-07-10",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Strength of Materials"
+                      },
+                      {
+                          "day":  34,
+                          "date":  "2026-07-11",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "Strength of Materials"
+                      },
+                      {
+                          "day":  35,
+                          "date":  "2026-07-12",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "Strength of Materials"
+                      },
+                      {
+                          "day":  36,
+                          "date":  "2026-07-13",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Strength of Materials"
+                      },
+                      {
+                          "day":  37,
+                          "date":  "2026-07-14",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Strength of Materials"
+                      },
+                      {
+                          "day":  38,
+                          "date":  "2026-07-15",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Strength of Materials"
+                      },
+                      {
+                          "day":  39,
+                          "date":  "2026-07-16",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Strength of Materials"
+                      },
+                      {
+                          "day":  40,
+                          "date":  "2026-07-17",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Strength of Materials"
+                      },
+                      {
+                          "day":  41,
+                          "date":  "2026-07-18",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "RCC"
+                      },
+                      {
+                          "day":  42,
+                          "date":  "2026-07-19",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "RCC"
+                      },
+                      {
+                          "day":  43,
+                          "date":  "2026-07-20",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "RCC"
+                      },
+                      {
+                          "day":  44,
+                          "date":  "2026-07-21",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "RCC"
+                      },
+                      {
+                          "day":  45,
+                          "date":  "2026-07-22",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "RCC"
+                      },
+                      {
+                          "day":  46,
+                          "date":  "2026-07-23",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "RCC"
+                      },
+                      {
+                          "day":  47,
+                          "date":  "2026-07-24",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "RCC"
+                      },
+                      {
+                          "day":  48,
+                          "date":  "2026-07-25",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "RCC"
+                      },
+                      {
+                          "day":  49,
+                          "date":  "2026-07-26",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "RCC"
+                      },
+                      {
+                          "day":  50,
+                          "date":  "2026-07-27",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "RCC"
+                      },
+                      {
+                          "day":  51,
+                          "date":  "2026-07-28",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Steel Structures"
+                      },
+                      {
+                          "day":  52,
+                          "date":  "2026-07-29",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Steel Structures"
+                      },
+                      {
+                          "day":  53,
+                          "date":  "2026-07-30",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Steel Structures"
+                      },
+                      {
+                          "day":  54,
+                          "date":  "2026-07-31",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Steel Structures"
+                      },
+                      {
+                          "day":  55,
+                          "date":  "2026-08-01",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "Steel Structures"
+                      },
+                      {
+                          "day":  56,
+                          "date":  "2026-08-02",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "Steel Structures"
+                      },
+                      {
+                          "day":  57,
+                          "date":  "2026-08-03",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Steel Structures"
+                      },
+                      {
+                          "day":  58,
+                          "date":  "2026-08-04",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Steel Structures"
+                      },
+                      {
+                          "day":  59,
+                          "date":  "2026-08-05",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Steel Structures"
+                      },
+                      {
+                          "day":  60,
+                          "date":  "2026-08-06",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Steel Structures"
+                      },
+                      {
+                          "day":  61,
+                          "date":  "2026-08-07",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Geotechnical Engineering"
+                      },
+                      {
+                          "day":  62,
+                          "date":  "2026-08-08",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "Geotechnical Engineering"
+                      },
+                      {
+                          "day":  63,
+                          "date":  "2026-08-09",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "Geotechnical Engineering"
+                      },
+                      {
+                          "day":  64,
+                          "date":  "2026-08-10",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Geotechnical Engineering"
+                      },
+                      {
+                          "day":  65,
+                          "date":  "2026-08-11",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Geotechnical Engineering"
+                      },
+                      {
+                          "day":  66,
+                          "date":  "2026-08-12",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Geotechnical Engineering"
+                      },
+                      {
+                          "day":  67,
+                          "date":  "2026-08-13",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Geotechnical Engineering"
+                      },
+                      {
+                          "day":  68,
+                          "date":  "2026-08-14",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Geotechnical Engineering"
+                      },
+                      {
+                          "day":  69,
+                          "date":  "2026-08-15",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "Geotechnical Engineering"
+                      },
+                      {
+                          "day":  70,
+                          "date":  "2026-08-16",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "Geotechnical Engineering"
+                      },
+                      {
+                          "day":  71,
+                          "date":  "2026-08-17",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Environmental Engineering"
+                      },
+                      {
+                          "day":  72,
+                          "date":  "2026-08-18",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Environmental Engineering"
+                      },
+                      {
+                          "day":  73,
+                          "date":  "2026-08-19",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Environmental Engineering"
+                      },
+                      {
+                          "day":  74,
+                          "date":  "2026-08-20",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Environmental Engineering"
+                      },
+                      {
+                          "day":  75,
+                          "date":  "2026-08-21",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Environmental Engineering"
+                      },
+                      {
+                          "day":  76,
+                          "date":  "2026-08-22",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "Environmental Engineering"
+                      },
+                      {
+                          "day":  77,
+                          "date":  "2026-08-23",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "Environmental Engineering"
+                      },
+                      {
+                          "day":  78,
+                          "date":  "2026-08-24",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Environmental Engineering"
+                      },
+                      {
+                          "day":  79,
+                          "date":  "2026-08-25",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Transportation Engineering"
+                      },
+                      {
+                          "day":  80,
+                          "date":  "2026-08-26",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Transportation Engineering"
+                      },
+                      {
+                          "day":  81,
+                          "date":  "2026-08-27",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Transportation Engineering"
+                      },
+                      {
+                          "day":  82,
+                          "date":  "2026-08-28",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Transportation Engineering"
+                      },
+                      {
+                          "day":  83,
+                          "date":  "2026-08-29",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "Transportation Engineering"
+                      },
+                      {
+                          "day":  84,
+                          "date":  "2026-08-30",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "Transportation Engineering"
+                      },
+                      {
+                          "day":  85,
+                          "date":  "2026-08-31",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Transportation Engineering"
+                      },
+                      {
+                          "day":  86,
+                          "date":  "2026-09-01",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Transportation Engineering"
+                      },
+                      {
+                          "day":  87,
+                          "date":  "2026-09-02",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Engineering Mathematics"
+                      },
+                      {
+                          "day":  88,
+                          "date":  "2026-09-03",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Engineering Mathematics"
+                      },
+                      {
+                          "day":  89,
+                          "date":  "2026-09-04",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Engineering Mathematics"
+                      },
+                      {
+                          "day":  90,
+                          "date":  "2026-09-05",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "Engineering Mathematics"
+                      },
+                      {
+                          "day":  91,
+                          "date":  "2026-09-06",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "Engineering Mathematics"
+                      },
+                      {
+                          "day":  92,
+                          "date":  "2026-09-07",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Engineering Mathematics"
+                      },
+                      {
+                          "day":  93,
+                          "date":  "2026-09-08",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "Engineering Mathematics"
+                      },
+                      {
+                          "day":  94,
+                          "date":  "2026-09-09",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "General Aptitude"
+                      },
+                      {
+                          "day":  95,
+                          "date":  "2026-09-10",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "General Aptitude"
+                      },
+                      {
+                          "day":  96,
+                          "date":  "2026-09-11",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "General Aptitude"
+                      },
+                      {
+                          "day":  97,
+                          "date":  "2026-09-12",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "General Aptitude"
+                      },
+                      {
+                          "day":  98,
+                          "date":  "2026-09-13",
+                          "isWeekend":  true,
+                          "videosToWatch":  3,
+                          "revisionSlots":  10,
+                          "subjectFocus":  "General Aptitude"
+                      },
+                      {
+                          "day":  99,
+                          "date":  "2026-09-14",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "General Aptitude"
+                      },
+                      {
+                          "day":  100,
+                          "date":  "2026-09-15",
+                          "isWeekend":  false,
+                          "videosToWatch":  2,
+                          "revisionSlots":  2,
+                          "subjectFocus":  "General Aptitude"
+                      }
+                  ],
+    "milestones":  [
+                       {
+                           "day":  10,
+                           "title":  "Soil Mechanics Complete"
+                       },
+                       {
+                           "day":  20,
+                           "title":  "Fluid Mechanics Complete"
+                       },
+                       {
+                           "day":  30,
+                           "title":  "Structural Analysis Complete"
+                       },
+                       {
+                           "day":  40,
+                           "title":  "Strength of Materials Complete"
+                       },
+                       {
+                           "day":  50,
+                           "title":  "RCC Complete â€” Halfway!"
+                       },
+                       {
+                           "day":  60,
+                           "title":  "Steel Structures Complete"
+                       },
+                       {
+                           "day":  70,
+                           "title":  "Geotechnical Engineering Complete"
+                       },
+                       {
+                           "day":  78,
+                           "title":  "Environmental Engineering Complete"
+                       },
+                       {
+                           "day":  86,
+                           "title":  "Transportation Engineering Complete"
+                       },
+                       {
+                           "day":  93,
+                           "title":  "Engineering Mathematics Complete"
+                       },
+                       {
+                           "day":  100,
+                           "title":  "Full Syllabus Done ðŸŽ‰"
+                       }
+                   ]
+}

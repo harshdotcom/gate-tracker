@@ -1,0 +1,162 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* ── CSS Variables ── */
+:root {
+  --primary: #3f51b5;
+  --success: #4caf50;
+  --warning: #ff9800;
+  --bg-main: #f5f7fa;
+  --bg-surface: #ffffff;
+  --bg-surface-variant: #e8eaed;
+  --text-main: #202124;
+  --text-secondary: #5f6368;
+  --text-tertiary: #80868b;
+  --border-color: #dadce0;
+}
+
+body.dark-mode {
+  --bg-main: #0f1117;
+  --bg-surface: #1a1d27;
+  --bg-surface-variant: #252836;
+  --text-main: #e8eaed;
+  --text-secondary: #9aa0a6;
+  --text-tertiary: #6c737a;
+  --border-color: #2d3142;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+/* ── Base ── */
+html, body { height: 100%; margin: 0; }
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+* { box-sizing: border-box; }
+
+/* ── Dark mode: Material overrides ── */
+
+/* Sidenav */
+body.dark-mode .mat-drawer-container,
+body.dark-mode .mat-sidenav-container {
+  background-color: var(--bg-main) !important;
+  color: var(--text-main) !important;
+}
+body.dark-mode .mat-drawer,
+body.dark-mode .mat-sidenav {
+  background-color: var(--bg-surface) !important;
+  color: var(--text-main) !important;
+  border-right: 1px solid var(--border-color) !important;
+}
+body.dark-mode .mat-sidenav-content {
+  background-color: var(--bg-main) !important;
+  color: var(--text-main) !important;
+}
+
+/* Toolbar */
+body.dark-mode .mat-toolbar,
+body.dark-mode .mat-mdc-toolbar {
+  background-color: var(--bg-surface) !important;
+  color: var(--text-main) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+/* Cards */
+body.dark-mode .mat-mdc-card,
+body.dark-mode .mdc-card {
+  background-color: var(--bg-surface) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-color) !important;
+}
+body.dark-mode .mat-mdc-card-title,
+body.dark-mode .mat-mdc-card-subtitle,
+body.dark-mode .mat-card-title,
+body.dark-mode .mat-card-subtitle {
+  color: var(--text-main) !important;
+}
+
+/* Expansion panels */
+body.dark-mode .mat-expansion-panel,
+body.dark-mode .mat-mdc-expansion-panel {
+  background-color: var(--bg-surface) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-color) !important;
+}
+body.dark-mode .mat-expansion-panel-header,
+body.dark-mode .mat-mdc-expansion-panel-header {
+  background-color: var(--bg-surface) !important;
+  color: var(--text-main) !important;
+}
+body.dark-mode .mat-expansion-panel-header:hover {
+  background-color: var(--bg-surface-variant) !important;
+}
+body.dark-mode .mat-expansion-panel-header-title,
+body.dark-mode .mat-panel-title {
+  color: var(--text-main) !important;
+}
+body.dark-mode .mat-expansion-panel-header-description,
+body.dark-mode .mat-panel-description {
+  color: var(--text-secondary) !important;
+}
+body.dark-mode .mat-expansion-panel-body {
+  background-color: var(--bg-surface) !important;
+  color: var(--text-main) !important;
+}
+body.dark-mode .mat-accordion .mat-expansion-panel:not(.mat-expanded) {
+  background-color: var(--bg-surface) !important;
+}
+
+/* Nav list */
+body.dark-mode .mat-mdc-nav-list .mat-mdc-list-item,
+body.dark-mode .mat-nav-list .mat-list-item {
+  color: var(--text-main) !important;
+}
+body.dark-mode .mat-mdc-list-item-title {
+  color: var(--text-main) !important;
+}
+
+/* Icons */
+body.dark-mode .mat-icon {
+  color: var(--text-secondary) !important;
+}
+body.dark-mode .mat-icon.mat-primary {
+  color: var(--primary) !important;
+}
+
+/* Buttons */
+body.dark-mode .mat-mdc-icon-button {
+  color: var(--text-main) !important;
+}
+
+/* Checkboxes */
+body.dark-mode .mat-mdc-checkbox .mdc-form-field {
+  color: var(--text-main) !important;
+}
+
+/* Progress bar background track */
+body.dark-mode .progress-track {
+  background: var(--bg-surface-variant) !important;
+}
+
+/* Tables */
+body.dark-mode .mat-mdc-table {
+  background-color: var(--bg-surface) !important;
+}
+body.dark-mode .mat-mdc-header-cell {
+  color: var(--text-secondary) !important;
+  border-bottom-color: var(--border-color) !important;
+}
+body.dark-mode .mat-mdc-cell {
+  color: var(--text-main) !important;
+  border-bottom-color: var(--border-color) !important;
+}
+
+/* Headings inside dark mode */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: var(--text-main) !important;
+}
