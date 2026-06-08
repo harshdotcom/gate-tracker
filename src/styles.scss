@@ -33,9 +33,22 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: var(--bg-main);
   color: var(--text-main);
+  /* prevent horizontal overflow on mobile */
+  overflow-x: hidden;
 }
 
 * { box-sizing: border-box; }
+
+/* ── Mobile viewport ── */
+/* Ensure nothing exceeds the viewport width */
+img, canvas, video { max-width: 100%; }
+
+/* Improve tap target size on touch devices */
+@media (max-width: 768px) {
+  .mat-mdc-icon-button { min-width: 44px; min-height: 44px; }
+  /* Push sidenav-content above any browser chrome on mobile */
+  .mat-sidenav-content { overflow-x: hidden; }
+}
 
 /* ── Dark mode: Material overrides ── */
 

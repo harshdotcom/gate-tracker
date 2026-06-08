@@ -385,10 +385,12 @@ import { DailyLog, DailyTask, DailyReflection, TaskStatus, HealthStatus } from '
   .score-card { border-radius: 14px; }
   .score-card mat-card-content { padding: 1.25rem !important; }
   .score-grid { display: grid; grid-template-columns: 140px 1fr; gap: 1.5rem; align-items: center; }
+  @media (max-width: 480px) { .score-grid { grid-template-columns: 1fr; gap: 1rem; } }
   .score-num { font-size: 2.5rem; font-weight: 900; color: var(--primary); line-height: 1; }
   .score-num.full { color: var(--success); }
   .score-sub { font-size: 0.75rem; color: var(--text-secondary); margin: 4px 0 8px; }
   .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  @media (max-width: 400px) { .kpi-row { grid-template-columns: repeat(2, 1fr); } }
   .kpi { text-align: center; }
   .kpi mat-icon { color: var(--primary); font-size: 1.3rem; width: 1.3rem; height: 1.3rem; }
   .kpi-nums { font-size: 1.25rem; font-weight: 700; color: var(--text-main); }
@@ -442,6 +444,7 @@ import { DailyLog, DailyTask, DailyReflection, TaskStatus, HealthStatus } from '
 
   /* ── Actuals ── */
   .actuals-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+  @media (max-width: 480px) { .actuals-grid { grid-template-columns: 1fr; } }
 
   /* ── Reflection ── */
   .reflection-fields { display: flex; flex-direction: column; gap: .5rem; }
@@ -459,6 +462,13 @@ import { DailyLog, DailyTask, DailyReflection, TaskStatus, HealthStatus } from '
   .recovery-header { display: grid; grid-template-columns: 1fr 80px 80px 55px 75px 40px; gap: .5rem; padding: .4rem .6rem; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--text-secondary); border-bottom: 2px solid var(--border-color); }
   .recovery-row { display: grid; grid-template-columns: 1fr 80px 80px 55px 75px 40px; gap: .5rem; padding: .5rem .6rem; font-size: .85rem; align-items: center; border-bottom: 1px solid var(--border-color); }
   .recovery-row:last-child { border-bottom: none; }
+  @media (max-width: 600px) {
+    .recovery-header { display: none; }
+    .recovery-row { display: flex; flex-wrap: wrap; gap: .4rem; padding: .75rem; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: .5rem; }
+    .recovery-row:last-child { border-bottom: 1px solid var(--border-color); }
+    .rec-label { width: 100%; font-size: .875rem; }
+    .rec-type, .rec-date, .rec-delay { font-size: .75rem; }
+  }
   .priority-high   { border-left: 3px solid #e53935; }
   .priority-medium { border-left: 3px solid var(--warning); }
   .priority-low    { border-left: 3px solid var(--success); }
@@ -472,7 +482,8 @@ import { DailyLog, DailyTask, DailyReflection, TaskStatus, HealthStatus } from '
   .rec-delay { font-weight: 700; color: #e53935; }
 
   /* ── Weekly ── */
-  .weekly-stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-bottom: 1rem; }
+  .weekly-stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: .75rem; margin-bottom: 1rem; }
+  @media (max-width: 500px) { .weekly-stats { grid-template-columns: repeat(3, 1fr); } }
   .w-stat { text-align: center; padding: .75rem; background: var(--bg-surface-variant); border-radius: 10px; }
   .w-stat.success { background: rgba(76,175,80,.1); }
   .w-stat.warn    { background: rgba(244,67,54,.08); }

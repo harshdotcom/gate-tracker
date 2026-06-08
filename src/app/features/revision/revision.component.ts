@@ -270,6 +270,10 @@ import { MatChipsModule } from '@angular/material/chips';
     .breakdown-card mat-card-content { padding: 1rem !important; }
     .breakdown-row { display: grid; grid-template-columns: 200px 1fr 60px 48px; gap: 1rem; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color); }
     .breakdown-row:last-child { border-bottom: none; }
+    @media (max-width: 600px) {
+      .breakdown-row { grid-template-columns: 1fr 60px 48px; grid-template-rows: auto auto; }
+      .breakdown-name { grid-column: 1 / -1; font-size: 0.8rem; }
+    }
     .breakdown-name { font-weight: 500; font-size: 0.875rem; color: var(--text-main); }
     .breakdown-bar-wrap { width: 100%; }
     .breakdown-bar { height: 8px; background: var(--bg-surface-variant); border-radius: 4px; overflow: hidden; }

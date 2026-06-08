@@ -49,11 +49,16 @@ import { MatIconModule } from '@angular/material/icon';
   `,
   styles: [`
     .subjects-container { display: flex; flex-direction: column; gap: 1rem; }
-    .panel-desc { display: flex; align-items: center; justify-content: flex-end; width: 100%; gap: 1.5rem; }
-    .panel-desc app-progress-bar { width: 150px; margin-bottom: 0; }
-    .headers-align mat-expansion-panel-header { padding: 0 24px; }
-    mat-panel-title { flex-basis: 30%; }
-    mat-panel-description { flex-basis: 70%; justify-content: space-between; align-items: center; }
+    .panel-desc { display: flex; align-items: center; justify-content: flex-end; width: 100%; gap: 1rem; }
+    .panel-desc span { white-space: nowrap; font-size: 0.8rem; }
+    .panel-desc app-progress-bar { width: 120px; min-width: 80px; margin-bottom: 0; flex-shrink: 0; }
+    .headers-align mat-expansion-panel-header { padding: 0 16px; }
+    mat-panel-title { flex-basis: 40%; min-width: 0; font-size: 0.9rem; }
+    mat-panel-description { flex-basis: 60%; justify-content: flex-end; align-items: center; }
+    @media (max-width: 480px) {
+      mat-panel-title { flex-basis: 100%; }
+      mat-panel-description { display: none !important; }
+    }
     .videos-list { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem; }
     .video-item { padding: 0.5rem 0; border-bottom: 1px solid var(--border-color); }
     .video-item:last-child { border-bottom: none; }

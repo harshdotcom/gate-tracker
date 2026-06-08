@@ -1,4 +1,4 @@
-import { Component, inject, signal, computed, OnInit } from '@angular/core';
+import { Component, inject, signal, computed, OnInit, HostListener } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterModule } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -14,37 +14,39 @@ import { DataService } from '../core/services/data.service';
   imports: [RouterModule, MatSidenavModule, MatToolbarModule, MatListModule, MatIconModule, MatButtonModule],
   template: `
     <mat-sidenav-container class="sidenav-container">
-      <mat-sidenav #sidenav mode="side" opened class="sidenav">
+      <mat-sidenav #sidenav [mode]="isMobile() ? 'over' : 'side'"
+                   [opened]="!isMobile()"
+                   class="sidenav">
         <div class="logo-container">
           <mat-icon>school</mat-icon>
           <span>GATE Tracker</span>
         </div>
         <mat-nav-list>
-          <a mat-list-item routerLink="/dashboard" routerLinkActive="active-link">
+          <a mat-list-item routerLink="/dashboard" routerLinkActive="active-link" (click)="isMobile() && sidenav.close()">
             <mat-icon matListItemIcon>dashboard</mat-icon>
             <span matListItemTitle>Dashboard</span>
           </a>
-          <a mat-list-item routerLink="/subjects" routerLinkActive="active-link">
+          <a mat-list-item routerLink="/subjects" routerLinkActive="active-link" (click)="isMobile() && sidenav.close()">
             <mat-icon matListItemIcon>menu_book</mat-icon>
             <span matListItemTitle>Subjects</span>
           </a>
-          <a mat-list-item routerLink="/tracker" routerLinkActive="active-link">
+          <a mat-list-item routerLink="/tracker" routerLinkActive="active-link" (click)="isMobile() && sidenav.close()">
             <mat-icon matListItemIcon>track_changes</mat-icon>
             <span matListItemTitle>Daily Tracker</span>
           </a>
-          <a mat-list-item routerLink="/roadmap" routerLinkActive="active-link">
+          <a mat-list-item routerLink="/roadmap" routerLinkActive="active-link" (click)="isMobile() && sidenav.close()">
             <mat-icon matListItemIcon>map</mat-icon>
             <span matListItemTitle>Roadmap</span>
           </a>
-          <a mat-list-item routerLink="/revision" routerLinkActive="active-link">
+          <a mat-list-item routerLink="/revision" routerLinkActive="active-link" (click)="isMobile() && sidenav.close()">
             <mat-icon matListItemIcon>replay</mat-icon>
             <span matListItemTitle>Revision</span>
           </a>
-          <a mat-list-item routerLink="/analytics" routerLinkActive="active-link">
+          <a mat-list-item routerLink="/analytics" routerLinkActive="active-link" (click)="isMobile() && sidenav.close()">
             <mat-icon matListItemIcon>bar_chart</mat-icon>
             <span matListItemTitle>Analytics</span>
           </a>
-          <a mat-list-item routerLink="/settings" routerLinkActive="active-link">
+          <a mat-list-item routerLink="/settings" routerLinkActive="active-link" (click)="isMobile() && sidenav.close()">
             <mat-icon matListItemIcon>settings</mat-icon>
             <span matListItemTitle>Settings</span>
           </a>
@@ -57,7 +59,7 @@ import { DataService } from '../core/services/data.service';
             <mat-icon>menu</mat-icon>
           </button>
 
-          @if (dailyQuote()) {
+          @if (dailyQuote() && !isMobile()) {
             <div class="quote-container">
               <mat-icon>format_quote</mat-icon>
               <span class="quote-text">{{ dailyQuote() }}</span>
@@ -85,15 +87,18 @@ import { DataService } from '../core/services/data.service';
     .active-link mat-icon { color: var(--primary) !important; }
     .top-toolbar { background: var(--bg-surface) !important; color: var(--text-main) !important; border-bottom: 1px solid var(--border-color); box-shadow: none; display: flex; align-items: center; }
     .spacer { flex: 1 1 auto; }
-    .main-content { padding: 24px; max-width: 1200px; margin: 0 auto; }
-    .quote-container { display: flex; align-items: center; gap: 8px; font-style: italic; color: var(--text-secondary); margin-left: 20px; font-size: 0.875rem; }
-    .quote-container mat-icon { font-size: 1.1rem; height: 1.1rem; width: 1.1rem; color: var(--primary); }
+    .main-content { padding: 16px; max-width: 1200px; margin: 0 auto; }
+    @media (min-width: 600px) { .main-content { padding: 24px; } }
+    .quote-container { display: flex; align-items: center; gap: 8px; font-style: italic; color: var(--text-secondary); margin-left: 20px; font-size: 0.875rem; overflow: hidden; }
+    .quote-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 400px; }
+    .quote-container mat-icon { font-size: 1.1rem; height: 1.1rem; width: 1.1rem; color: var(--primary); flex-shrink: 0; }
   `]
 })
 export class LayoutComponent implements OnInit {
   private dataService = inject(DataService);
 
   isDarkMode = signal(localStorage.getItem('theme') === 'dark');
+  isMobile = signal(window.innerWidth < 768);
 
   private quotes = toSignal(this.dataService.getQuotes(), { initialValue: [] as string[] });
 
@@ -102,6 +107,11 @@ export class LayoutComponent implements OnInit {
     if (!q.length) return '';
     return q[new Date().getDay() % q.length];
   });
+
+  @HostListener('window:resize')
+  onResize() {
+    this.isMobile.set(window.innerWidth < 768);
+  }
 
   ngOnInit() {
     this.applyTheme(this.isDarkMode());

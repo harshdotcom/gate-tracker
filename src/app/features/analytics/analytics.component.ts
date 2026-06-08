@@ -43,7 +43,7 @@ import { MatCardModule } from '@angular/material/card';
   `,
   styles: [`
     .analytics-container { padding: 1rem 0; }
-    .charts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; }
+    .charts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 2rem; }
     .chart-card { padding: 1rem; border-radius: 12px; }
   `]
 })

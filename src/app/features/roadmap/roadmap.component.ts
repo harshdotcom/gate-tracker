@@ -253,6 +253,14 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     .table-row.today-row { background: rgba(63,81,181,0.06); font-weight: 600; }
     .table-row.weekend-row { background: rgba(63,81,181,0.02); }
     .table-row.past-row { opacity: 0.5; }
+    @media (max-width: 600px) {
+      .table-header { display: none; }
+      .table-row { grid-template-columns: 40px 1fr auto; grid-template-rows: auto auto; gap: 0.25rem 0.5rem; padding: 0.6rem 0.75rem; }
+      .table-row > span:nth-child(3) { grid-column: 3; grid-row: 1; }
+      .table-row > span:nth-child(4),
+      .table-row > span:nth-child(5) { font-size: 0.75rem; color: var(--text-secondary); }
+      .table-row > span:nth-child(6) { grid-column: 2 / -1; font-size: 0.8rem; }
+    }
     .day-num { font-weight: 700; color: var(--primary); }
     .center { text-align: center; }
     .badge { font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
