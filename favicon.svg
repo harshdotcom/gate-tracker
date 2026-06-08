@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="#1a237e"/>
+  <!-- Bridge arch (civil engineering symbol) -->
+  <path d="M10 44 Q32 16 54 44" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Bridge deck (horizontal line) -->
+  <line x1="10" y1="44" x2="54" y2="44" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Left pillar -->
+  <line x1="10" y1="44" x2="10" y2="52" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Right pillar -->
+  <line x1="54" y1="44" x2="54" y2="52" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Vertical hangers -->
+  <line x1="22" y1="44" x2="22" y2="33" stroke="#90caf9" stroke-width="2" stroke-linecap="round"/>
+  <line x1="32" y1="44" x2="32" y2="24" stroke="#90caf9" stroke-width="2" stroke-linecap="round"/>
+  <line x1="42" y1="44" x2="42" y2="33" stroke="#90caf9" stroke-width="2" stroke-linecap="round"/>
+  <!-- Letter G -->
+  <text x="32" y="20" font-family="Arial, sans-serif" font-weight="bold" font-size="10" fill="#ffcc02" text-anchor="middle" dominant-baseline="middle">GATE</text>
+</svg>
