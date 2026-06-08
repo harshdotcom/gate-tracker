@@ -69,10 +69,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "gate-civil-tracker:build:production"
+              "buildTarget": "gate-tracker:build:production"
             },
             "development": {
-              "buildTarget": "gate-civil-tracker:build:development"
+              "buildTarget": "gate-tracker:build:development"
             }
           },
           "defaultConfiguration": "development"
