@@ -1,5 +1,5 @@
 {
-  "name": "gate-civil-tracker",
+  "name": "gate-tracker",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build:gh": "ng build --configuration production --base-href /gate-tracker/",
-    "deploy": "npm run build:gh && npx gh-pages -d dist/gate-civil-tracker/browser"
+    "deploy": "npm run build:gh && npx gh-pages -d dist/gate-tracker/browser"
   },
   "prettier": {
     "printWidth": 100,
