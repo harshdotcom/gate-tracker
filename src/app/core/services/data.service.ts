@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subject, Video, RoadmapData } from '../models';
+import { Subject, Video, RoadmapData, WeeklyPlanData } from '../models';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
@@ -21,5 +21,9 @@ export class DataService {
 
   getRoadmap(): Observable<RoadmapData> {
     return this.http.get<RoadmapData>('assets/data/roadmap.json');
+  }
+
+  getWeeklyPlan(): Observable<WeeklyPlanData> {
+    return this.http.get<WeeklyPlanData>('assets/data/weekly-plan.json');
   }
 }

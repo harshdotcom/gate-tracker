@@ -34,7 +34,7 @@ import { DailyLog, DailyTask, DailyReflection, TaskStatus, HealthStatus } from '
     @if (svc.nextCatchUpDay()) {
       <div class="catchup-pill">
         <mat-icon>event_available</mat-icon>
-        Next Catch-Up: <strong>Day {{ svc.nextCatchUpDay()!.day }}</strong> · {{ fmtShort(svc.nextCatchUpDay()!.date) }}
+        Next Flex Day: <strong>Day {{ svc.nextCatchUpDay()!.day }}</strong> · {{ fmtShort(svc.nextCatchUpDay()!.date) }}
       </div>
     }
     <div class="streak-pill">

@@ -20,12 +20,12 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
       <div class="page-header">
         <div>
           <h2 class="page-title">Preparation Roadmap</h2>
-          <p class="page-subtitle">100-day plan · 2 videos/weekday · 3 videos/weekend · 20% revision time</p>
+          <p class="page-subtitle">Max 2 videos/day (hard cap) · Mon–Sat: 2 lectures + revision + PYQs · Sunday: flex day</p>
         </div>
         <div class="header-stats">
           <div class="stat-pill">
             <mat-icon>today</mat-icon>
-            <span>Day {{ currentDayNumber() }} of 100</span>
+            <span>Day {{ currentDayNumber() }} of {{ totalDays() }}</span>
           </div>
           <div class="stat-pill success">
             <mat-icon>check_circle</mat-icon>
@@ -44,7 +44,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
           <mat-progress-bar mode="determinate" [value]="overallPercent()" color="primary"></mat-progress-bar>
           <div class="progress-meta">
             <span>Started: {{ startDate() }}</span>
-            <span>Target: 15 Sep 2026</span>
+            <span>Coverage target: Jan 25 2027 · Exam: GATE Feb 2027</span>
           </div>
         </mat-card-content>
       </mat-card>
@@ -69,7 +69,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
               <div class="task-chip revise">
                 <mat-icon>menu_book</mat-icon>
                 <div>
-                  <div class="task-label">Revision (20%)</div>
+                  <div class="task-label">Revision</div>
                   <div class="task-value">{{ todayRevisionTarget() }} video{{ todayRevisionTarget() !== 1 ? 's' : '' }}</div>
                 </div>
               </div>
@@ -280,6 +280,7 @@ export class RoadmapComponent {
   dailyPlan = computed<DayPlan[]>(() => this.roadmap()?.dailyPlan ?? []);
   milestones = computed<RoadmapMilestone[]>(() => this.roadmap()?.milestones ?? []);
   startDate = computed(() => this.roadmap()?.startDate ?? '');
+  totalDays = computed(() => this.roadmap()?.totalDays ?? 0);
 
   todayPlan = computed(() => this.dailyPlan().find(d => d.date === this.today) ?? null);
 
@@ -287,7 +288,10 @@ export class RoadmapComponent {
 
   daysCompleted = computed(() => this.dailyPlan().filter(d => d.date < this.today).length);
 
-  overallPercent = computed(() => Math.round((this.daysCompleted() / 100) * 100));
+  overallPercent = computed(() => {
+    const total = this.totalDays();
+    return total ? Math.round((this.daysCompleted() / total) * 100) : 0;
+  });
 
   todayRevisionTarget = computed(() => {
     const plan = this.todayPlan();

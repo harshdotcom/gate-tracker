@@ -21,6 +21,7 @@ export interface UserProgress {
   lastStudyDate: string | null;
   revisedVideoIds: string[];
   revisionLog: { [date: string]: string[] };
+  completionLog: { [date: string]: string[] };
 }
 
 export interface RoadmapPhase {
@@ -97,4 +98,62 @@ export interface RecoveryItem {
 export interface TrackerStore {
   logs: { [date: string]: DailyLog };
   recoveryQueue: RecoveryItem[];
+}
+
+// ── Weekly Threshold System ──────────────────────────────────────────────────
+
+export interface WeeklySubjectAlloc {
+  subjectId: string;
+  name: string;
+  videos: number;
+}
+
+export interface WeekPlan {
+  week: number;
+  phase: 1 | 2;
+  startDate: string;              // Monday (or plan start for week 1)
+  endDate: string;                // Sunday — weekly deadline
+  days: number;
+  videoTarget: number;            // planned target
+  videoMin: number;               // minimum threshold — must hit by Sunday
+  hoursTarget: number;
+  hoursMin: number;
+  questionsTarget: number;
+  questionsMin: number;
+  revisionTarget: number;
+  revisionMin: number;
+  subjects: WeeklySubjectAlloc[];
+  milestone?: string;
+}
+
+export interface WeeklyPlanData {
+  startDate: string;
+  examLabel: string;
+  totalVideos: number;
+  phase1Weeks: number;
+  totalWeeks: number;
+  phase1EndDate: string;
+  weeks: WeekPlan[];
+}
+
+export type WeekResult = 'achieved' | 'threshold-met' | 'missed' | 'in-progress' | 'upcoming';
+
+export interface MetricProgress {
+  done: number;
+  target: number;
+  min: number;
+  pctOfTarget: number;            // capped at 100
+  pctOfMin: number;               // capped at 100
+  minMet: boolean;
+  targetMet: boolean;
+}
+
+export interface WeekProgress {
+  plan: WeekPlan;
+  result: WeekResult;
+  videos: MetricProgress;
+  hours: MetricProgress;
+  questions: MetricProgress;
+  revision: MetricProgress;
+  score: number;                  // weighted % of weekly target achieved
 }

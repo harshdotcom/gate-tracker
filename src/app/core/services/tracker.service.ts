@@ -5,7 +5,7 @@ import {
 } from '../models';
 
 const KEY = 'gate_tracker_store';
-const START = '2026-06-08';
+const START = '2026-06-11';
 
 function today(): string { return new Date().toISOString().split('T')[0]; }
 
@@ -17,8 +17,9 @@ function dayNumber(date: string): number {
   return daysBetween(START, date) + 1;
 }
 
-function isCatchUp(dayNum: number): boolean {
-  return dayNum % 14 === 0;
+// Sundays are flex days: no new videos planned, used for recovery + revision + weekly review.
+function isFlexDay(date: string): boolean {
+  return new Date(date + 'T00:00:00').getDay() === 0;
 }
 
 @Injectable({ providedIn: 'root' })
@@ -84,16 +85,15 @@ export class TrackerService {
     };
   });
 
-  // ── Next catch-up day ───────────────────────────────────────────────────────
+  // ── Next flex (catch-up) day: the coming Sunday ─────────────────────────────
 
   nextCatchUpDay = computed<{ day: number; date: string } | null>(() => {
-    const todayNum = dayNumber(today());
-    for (let d = todayNum + 1; d <= 100; d++) {
-      if (isCatchUp(d)) {
-        const date = new Date(START);
-        date.setDate(date.getDate() + d - 1);
-        return { day: d, date: date.toISOString().split('T')[0] };
-      }
+    const t = today();
+    for (let i = 1; i <= 7; i++) {
+      const d = new Date(t + 'T00:00:00');
+      d.setDate(d.getDate() + i);
+      const date = d.toISOString().split('T')[0];
+      if (isFlexDay(date)) return { day: dayNumber(date), date };
     }
     return null;
   });
@@ -161,18 +161,19 @@ export class TrackerService {
   // ── Helpers ──────────────────────────────────────────────────────────────────
 
   buildEmptyLog(date: string): DailyLog {
-    const dayNum   = dayNumber(date);
-    const dow      = new Date(date + 'T00:00:00').getDay();
-    const isWeekend = dow === 0 || dow === 6;
-    const planned  = isWeekend ? 3 : 2;
+    const dayNum = dayNumber(date);
+    const dow    = new Date(date + 'T00:00:00').getDay();
+    const flex   = isFlexDay(date);
+    // Hard cap: max 2 new videos/day. Sun = 0 (flex day). Sat = 2 (same as weekday).
+    // Planned hours: ~3h/day on study days (lecture + notes + revision + PYQs).
     return {
       date,
       dayNumber: dayNum,
-      plannedVideos: isCatchUp(dayNum) ? 0 : planned,
+      plannedVideos: flex ? 0 : 2,
       completedVideos: 0,
-      plannedHours: isCatchUp(dayNum) ? 0 : (isWeekend ? 5 : 3),
+      plannedHours: flex ? 0 : 3,
       actualHours: 0,
-      isCatchUpDay: isCatchUp(dayNum),
+      isCatchUpDay: flex,
       tasks: [],
       reflection: { wentWell: '', delays: '', conceptsLearned: '', needsRevision: '', remarks: '' },
       questionsAttempted: 0,

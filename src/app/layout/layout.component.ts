@@ -26,6 +26,10 @@ import { DataService } from '../core/services/data.service';
             <mat-icon matListItemIcon>dashboard</mat-icon>
             <span matListItemTitle>Dashboard</span>
           </a>
+          <a mat-list-item routerLink="/weekly" routerLinkActive="active-link" (click)="isMobile() && sidenav.close()">
+            <mat-icon matListItemIcon>flag</mat-icon>
+            <span matListItemTitle>Weekly Goals</span>
+          </a>
           <a mat-list-item routerLink="/subjects" routerLinkActive="active-link" (click)="isMobile() && sidenav.close()">
             <mat-icon matListItemIcon>menu_book</mat-icon>
             <span matListItemTitle>Subjects</span>

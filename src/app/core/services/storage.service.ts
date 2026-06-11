@@ -14,6 +14,7 @@ export class StorageService {
       // migrate older saved data that lacks revision fields
       if (!p.revisedVideoIds) p.revisedVideoIds = [];
       if (!p.revisionLog) p.revisionLog = {};
+      if (!p.completionLog) p.completionLog = {};
       return p;
     }
     return {
@@ -24,7 +25,8 @@ export class StorageService {
       dailyStreak: 0,
       lastStudyDate: null,
       revisedVideoIds: [],
-      revisionLog: {}
+      revisionLog: {},
+      completionLog: {}
     };
   }
 
@@ -35,13 +37,23 @@ export class StorageService {
 
   toggleVideo(videoId: string) {
     const curr = this.progress();
+    const today = new Date().toISOString().split('T')[0];
     const completed = new Set(curr.completedVideoIds);
+    const log = { ...curr.completionLog };
     if (completed.has(videoId)) {
       completed.delete(videoId);
+      // remove from whichever day it was logged on
+      for (const date of Object.keys(log)) {
+        if (log[date].includes(videoId)) {
+          log[date] = log[date].filter(id => id !== videoId);
+          if (!log[date].length) delete log[date];
+        }
+      }
     } else {
       completed.add(videoId);
+      log[today] = Array.from(new Set([...(log[today] ?? []), videoId]));
     }
-    this.saveProgress({ ...curr, completedVideoIds: Array.from(completed) });
+    this.saveProgress({ ...curr, completedVideoIds: Array.from(completed), completionLog: log });
     this.updateDailyStreak();
   }
 
