@@ -1,10 +1,12 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, inject, signal, computed } from '@angular/core';
 import {
   DailyLog, DailyTask, DailyReflection,
   RecoveryItem, TaskStatus, TrackerStore, HealthStatus
 } from '../models';
+import { RemoteSyncService } from './remote-sync.service';
 
 const KEY = 'gate_tracker_store';
+const REMOTE_KEY = 'tracker';
 const START = '2026-06-11';
 
 function today(): string { return new Date().toISOString().split('T')[0]; }
@@ -24,7 +26,26 @@ function isFlexDay(date: string): boolean {
 
 @Injectable({ providedIn: 'root' })
 export class TrackerService {
+  private sync = inject(RemoteSyncService);
+
+  // Instant paint from the localStorage cache, then refreshed from the cloud.
   private store = signal<TrackerStore>(this.load());
+
+  constructor() {
+    this.hydrate();
+  }
+
+  /** On every app open, pull the freshest copy from the cloud (source of truth). */
+  private async hydrate() {
+    const remote = await this.sync.pull<TrackerStore>(REMOTE_KEY);
+    if (remote) {
+      localStorage.setItem(KEY, JSON.stringify(remote));
+      this.store.set(remote);
+    } else {
+      // First run on the cloud (or sync disabled): seed it with local data.
+      this.sync.push(REMOTE_KEY, this.store());
+    }
+  }
 
   // ── Public signals ──────────────────────────────────────────────────────────
 
@@ -235,5 +256,6 @@ export class TrackerService {
   private persist(s: TrackerStore) {
     localStorage.setItem(KEY, JSON.stringify(s));
     this.store.set({ ...s });
+    this.sync.push(REMOTE_KEY, s);
   }
 }

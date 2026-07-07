@@ -1,22 +1,36 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
 import { UserProgress } from '../models';
+import { RemoteSyncService } from './remote-sync.service';
 
 @Injectable({ providedIn: 'root' })
 export class StorageService {
   private readonly STORAGE_KEY = 'gate_civil_progress';
+  private readonly REMOTE_KEY = 'progress';
 
+  private sync = inject(RemoteSyncService);
+
+  // Starts from the localStorage cache for an instant paint, then gets
+  // overwritten by the fresh cloud copy once it arrives (see hydrate()).
   progress = signal<UserProgress>(this.loadProgress());
 
-  loadProgress(): UserProgress {
-    const data = localStorage.getItem(this.STORAGE_KEY);
-    if (data) {
-      const p = JSON.parse(data) as UserProgress;
-      // migrate older saved data that lacks revision fields
-      if (!p.revisedVideoIds) p.revisedVideoIds = [];
-      if (!p.revisionLog) p.revisionLog = {};
-      if (!p.completionLog) p.completionLog = {};
-      return p;
+  constructor() {
+    this.hydrate();
+  }
+
+  /** On every app open, pull the freshest copy from the cloud (source of truth). */
+  private async hydrate() {
+    const remote = await this.sync.pull<UserProgress>(this.REMOTE_KEY);
+    if (remote) {
+      const merged = this.withDefaults(remote);
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(merged));
+      this.progress.set(merged);
+    } else {
+      // First run on the cloud (or sync disabled): seed it with local data.
+      this.sync.push(this.REMOTE_KEY, this.progress());
     }
+  }
+
+  private emptyProgress(): UserProgress {
     return {
       completedVideoIds: [],
       videoNotes: {},
@@ -30,9 +44,26 @@ export class StorageService {
     };
   }
 
+  // Backfill fields that older saved data may be missing.
+  private withDefaults(p: UserProgress): UserProgress {
+    if (!p.revisedVideoIds) p.revisedVideoIds = [];
+    if (!p.revisionLog) p.revisionLog = {};
+    if (!p.completionLog) p.completionLog = {};
+    return p;
+  }
+
+  loadProgress(): UserProgress {
+    const data = localStorage.getItem(this.STORAGE_KEY);
+    if (data) {
+      return this.withDefaults(JSON.parse(data) as UserProgress);
+    }
+    return this.emptyProgress();
+  }
+
   saveProgress(data: UserProgress) {
     localStorage.setItem(this.STORAGE_KEY, JSON.stringify(data));
     this.progress.set({ ...data });
+    this.sync.push(this.REMOTE_KEY, data);
   }
 
   toggleVideo(videoId: string) {
@@ -119,7 +150,10 @@ export class StorageService {
   }
 
   resetProgress() {
+    const empty = this.emptyProgress();
     localStorage.removeItem(this.STORAGE_KEY);
-    this.progress.set(this.loadProgress());
+    this.progress.set(empty);
+    // Propagate the reset to the cloud so other devices clear too.
+    this.sync.push(this.REMOTE_KEY, empty);
   }
 }

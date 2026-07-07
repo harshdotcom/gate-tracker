@@ -1,0 +1,40 @@
+{
+  "completedVideoIds": [
+    "solid-mechanics-1",
+    "solid-mechanics-2",
+    "solid-mechanics-3",
+    "solid-mechanics-4",
+    "solid-mechanics-5",
+    "solid-mechanics-6",
+    "solid-mechanics-7",
+    "solid-mechanics-8",
+    "solid-mechanics-9",
+    "solid-mechanics-10",
+    "solid-mechanics-11",
+    "solid-mechanics-12",
+    "solid-mechanics-13",
+    "solid-mechanics-14",
+    "solid-mechanics-15",
+    "solid-mechanics-16",
+    "solid-mechanics-17",
+    "solid-mechanics-18"
+  ],
+  "videoNotes": {},
+  "studyDaysCompleted": 9,
+  "startDate": "2026-06-11",
+  "dailyStreak": 0,
+  "lastStudyDate": "2026-06-20",
+  "revisedVideoIds": [],
+  "revisionLog": {},
+  "completionLog": {
+    "2026-06-11": ["solid-mechanics-1", "solid-mechanics-2"],
+    "2026-06-12": ["solid-mechanics-3", "solid-mechanics-4"],
+    "2026-06-13": ["solid-mechanics-5", "solid-mechanics-6"],
+    "2026-06-15": ["solid-mechanics-7", "solid-mechanics-8"],
+    "2026-06-16": ["solid-mechanics-9", "solid-mechanics-10"],
+    "2026-06-17": ["solid-mechanics-11", "solid-mechanics-12"],
+    "2026-06-18": ["solid-mechanics-13", "solid-mechanics-14"],
+    "2026-06-19": ["solid-mechanics-15", "solid-mechanics-16"],
+    "2026-06-20": ["solid-mechanics-17", "solid-mechanics-18"]
+  }
+}
